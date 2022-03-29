@@ -6,10 +6,10 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <header>
-                    <h1>I miei post:</h1>
+                    <h1>Le mie categorie:</h1>
                 </header>
                 <div class="d-flex justify-content-end">
-                    <a class="btn btn-primary" href="{{ route('admin.posts.create') }}">Crea un post</a>
+                    <a class="btn btn-primary" href="{{ route('admin.categories.create') }}">Crea una nuova categoria</a>
                 </div>
                 <table class="table">
                     <thead>
