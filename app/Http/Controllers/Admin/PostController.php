@@ -22,7 +22,7 @@ class PostController extends Controller
     {
         $posts = Post::all();
         $categories = Category::all();
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts', 'categories'));
     }
 
     /**
@@ -120,5 +120,13 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()->route('admin.posts.index')->with('message', "$post->title eliminato con successo")->with('type', "success");
+    }
+
+    public function order()
+    {
+        $posts = Post::all();
+        $categories = Category::all();
+
+        return view('admin.posts.order', compact('posts', 'categories'));
     }
 }

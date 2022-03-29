@@ -70,6 +70,11 @@
                 </table>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <a href="{{ route('admin.posts.order') }}">Visualizza i post per Categoria</a>
+            </div>
+        </div>
     </div>
 @endsection
 
