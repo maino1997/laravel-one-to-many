@@ -30,7 +30,8 @@
                                 <td><img src="{{ $post->image }}" alt="{{ $post->image }}"></td>
                                 <td>
                                     @if ($post->category)
-                                        {{ $post->category->name }}
+                                        <span
+                                            class="badge badge-pill badge-{{ $post->category->color }}">{{ $post->category->name }}</span>
                                     @else
                                         -
                                     @endif

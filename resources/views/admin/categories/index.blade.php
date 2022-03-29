@@ -25,7 +25,9 @@
                             <tr>
                                 <th scope="row">{{ $category->id }}</th>
                                 <td>{{ $category->name }}</td>
-                                <td>{{ $category->color }}</td>
+                                <td><span
+                                        class="badge badge-pill badge-{{ $category->color }}">{{ $category->name }}</span>
+                                </td>
 
 
                                 <td><a class="btn btn-primary"
