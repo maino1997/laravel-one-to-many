@@ -23,6 +23,7 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/posts/order', 'PostController@order')->name('posts.order');
     Route::resource('posts', 'PostController');
+    Route::resource('categories', 'CategoryController');
 });
 
 Route::get('{any?}', function () {

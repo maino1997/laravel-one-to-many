@@ -9,45 +9,31 @@
                     <h1>I miei post:</h1>
                 </header>
                 <div class="d-flex justify-content-end">
-                    <a class="btn btn-primary" href="{{ route('admin.posts.create') }}">Crea una categoria</a>
+                    <a class="btn btn-primary" href="{{ route('admin.posts.create') }}">Crea un post</a>
                 </div>
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Titolo</th>
-                            <th scope="col">Contenuto</th>
-                            <th scope="col">Immagine</th>
-                            <th scope="col">Azioni</th>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Colore</th>
+
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($posts as $post)
+                        @forelse($categories as $category)
                             <tr>
-                                <th scope="row">{{ $post->id }}</th>
-                                <td>{{ $post->title }}</td>
-                                <td>{{ $post->content }}</td>
-                                <td><img src="{{ $post->image }}" alt="{{ $post->image }}"></td>
-                                <td>
-                                    @if ($post->category)
-                                        {{ $post->category->name }}
-                                    @else
-                                        -
-                                    @endif
-                                </td>
-                                <td>
-                                    @if ($post->user)
-                                        {{ $post->user->name }}
-                                    @else
-                                        -
-                                    @endif
-                                </td>
+                                <th scope="row">{{ $category->id }}</th>
+                                <td>{{ $category->name }}</td>
+                                <td>{{ $category->color }}</td>
+
+
                                 <td><a class="btn btn-primary"
-                                        href="{{ route('admin.posts.show', $post->id) }}">Dettaglio</a></td>
+                                        href="{{ route('admin.categories.show', $category->id) }}">Dettaglio</a></td>
                                 <td><a class="btn btn-warning"
-                                        href="{{ route('admin.posts.edit', $post->id) }}">Modifica</a></td>
+                                        href="{{ route('admin.categories.edit', $category->id) }}">Modifica</a></td>
                                 <td>
-                                    <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST"
+                                    <form action="{{ route('admin.categories.destroy', $category->id) }}" method="POST"
                                         class="delete-form">
                                         @method('DELETE')
                                         @csrf
