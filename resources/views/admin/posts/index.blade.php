@@ -28,7 +28,13 @@
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->content }}</td>
                                 <td><img src="{{ $post->image }}" alt="{{ $post->image }}"></td>
-                                <td>{{ $post->category->name }}</td>
+                                <td>
+                                    @if ($post->category)
+                                        {{ $post->category->name }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
                                 <td><a class="btn btn-primary"
                                         href="{{ route('admin.posts.show', $post->id) }}">Dettaglio</a></td>
                                 <td><a class="btn btn-warning"

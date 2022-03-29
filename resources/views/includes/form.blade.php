@@ -48,6 +48,15 @@
         @enderror
     </div>
     <div class="form-group">
+        <select name="category_id" id="category">
+            <option value="">Nessuna Categoria</option>
+            @foreach ($categories as $category)
+                <option @if (old('category_id', $post->category->id) == $category->id) selected @endif value="{{ $category->id }}">
+                    {{ $category->name }}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="form-group">
         <img src="{{ $comic->thumb ?? 'http://www.asdalcione.it/wp-content/uploads/2016/08/jk-placeholder-image-1.jpg' }}"
             alt="placeholder" id="image-src" width="200" class="img-fluid">
     </div>
