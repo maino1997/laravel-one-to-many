@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 
 
@@ -57,6 +58,7 @@ class PostController extends Controller
         $post = new Post();
 
         $post->fill($data);
+        $post->user_id = Auth::id();
         $post->save();
 
         return redirect()->route('admin.posts.show', ['post' => $post->id]);
