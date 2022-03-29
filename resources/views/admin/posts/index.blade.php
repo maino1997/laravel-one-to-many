@@ -35,6 +35,13 @@
                                         -
                                     @endif
                                 </td>
+                                <td>
+                                    @if ($post->user)
+                                        {{ $post->user->name }}
+                                    @else
+                                        -
+                                    @endif
+                                </td>
                                 <td><a class="btn btn-primary"
                                         href="{{ route('admin.posts.show', $post->id) }}">Dettaglio</a></td>
                                 <td><a class="btn btn-warning"
