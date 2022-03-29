@@ -9,7 +9,7 @@
                     <h1>I miei post:</h1>
                 </header>
                 <div class="d-flex justify-content-end">
-                    <a class="btn btn-primary" href="{{ route('admin.posts.create') }}">Crea una categoria</a>
+                    <a class="btn btn-primary" href="{{ route('admin.posts.create') }}">Crea un Post</a>
                 </div>
                 <table class="table">
                     <thead>
