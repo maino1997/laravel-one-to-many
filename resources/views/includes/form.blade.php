@@ -47,6 +47,16 @@
             </div>
         @enderror
     </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="1" id="ispub" name="is_published"
+            @if (old('is_published', $post->is_published)) checked @endif>
+        <label class="form-check-label" for="ispub">
+            Pubblicato
+        </label>
+        <div>
+        </div>
+    </div>
+
     <div class="form-group">
         <select name="category_id" id="category">
             <option value="">Nessuna Categoria</option>

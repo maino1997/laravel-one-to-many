@@ -56,7 +56,11 @@ class PostController extends Controller
         $data = $request->all();
 
         $post = new Post();
-
+        if (array_key_exists('is_published', $data)) {
+            $post->is_published = 1;
+        } else {
+            $post->is_published = 0;
+        }
         $post->fill($data);
         $post->user_id = Auth::id();
         $post->save();
@@ -103,7 +107,9 @@ class PostController extends Controller
         ]);
 
         $data = $request->all();
-
+        if (array_key_exists('is_published', $data)) {
+            $post->is_published = true;
+        }
         $post->update($data);
 
         return redirect()->route('admin.posts.show', ['post' => $post->id]);
@@ -128,5 +134,11 @@ class PostController extends Controller
         $categories = Category::all();
 
         return view('admin.posts.order', compact('posts', 'categories'));
+    }
+    public function toggle(Post $post)
+    {
+        $post->is_published = !$post->is_published;
+        $post->save();
+        return redirect()->route('admin.posts.index')->with('message', "$post->title pubblicato con successo")->with('type', "success");
     }
 }
