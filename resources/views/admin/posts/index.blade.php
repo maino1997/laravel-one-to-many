@@ -3,7 +3,7 @@
 @section('content')
     @include('includes.alert')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row ">
             <div class="col-md-8">
                 <header>
                     <h1>I miei post:</h1>
@@ -18,6 +18,9 @@
                             <th scope="col">Titolo</th>
                             <th scope="col">Contenuto</th>
                             <th scope="col">Immagine</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Autore</th>
+                            <th scope="col">Stato</th>
                             <th scope="col">Azioni</th>
                         </tr>
                     </thead>
@@ -27,7 +30,7 @@
                                 <th scope="row">{{ $post->id }}</th>
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->content }}</td>
-                                <td><img src="{{ $post->image }}" alt="{{ $post->image }}"></td>
+                                <td><img src="{{ $post->image }}" alt="thumb"></td>
                                 <td>
                                     @if ($post->category)
                                         <span
