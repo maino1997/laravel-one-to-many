@@ -4,7 +4,7 @@
     @include('includes.alert')
     <div class="container">
         <div class="row ">
-            <div class="col-md-8">
+            <div class="col">
                 <header>
                     <h1>I miei post:</h1>
                 </header>
@@ -91,6 +91,9 @@
                 <a href="{{ route('admin.posts.order') }}">Visualizza i post per Categoria</a>
             </div>
         </div>
+        @if ($posts->hasPages())
+            {{ $posts->links() }}
+        @endif
     </div>
 @endsection
 
