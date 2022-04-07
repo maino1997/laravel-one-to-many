@@ -21,6 +21,7 @@
                             <th scope="col">Categoria</th>
                             <th scope="col">Autore</th>
                             <th scope="col">Stato</th>
+                            <th scope="col">Aggiornato il</th>
                             <th scope="col">Azioni</th>
                         </tr>
                     </thead>
@@ -70,6 +71,7 @@
                                         <button class="btn btn-danger" type="submit">Elmina</button>
                                     </form>
                                 </td>
+                                <td>{{ $post->getFormattedDate('updated_at', 'd-m-Y') }}</td>
                                 <td class="d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-pen-to-square mr-3"></i>
                                     <i class="fa-solid fa-trash"></i>

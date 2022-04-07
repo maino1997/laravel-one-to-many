@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Post extends Model
 {
@@ -22,4 +23,8 @@ class Post extends Model
         'content',
         'category_id'
     ];
+    public function getFormattedDate($date, $format = 'd-m-Y H:i:s')
+    {
+        return Carbon::create($this->$date)->format($format);
+    }
 }
