@@ -59,6 +59,7 @@
                                         </button>
                                     </form>
                                 </td>
+                                <td>{{ $post->getFormattedDate('updated_at', 'd-m-Y') }}</td>
                                 <td><a class="btn btn-primary"
                                         href="{{ route('admin.posts.show', $post->id) }}">Dettaglio</a></td>
                                 <td><a class="btn btn-warning"
@@ -71,7 +72,6 @@
                                         <button class="btn btn-danger" type="submit">Elmina</button>
                                     </form>
                                 </td>
-                                <td>{{ $post->getFormattedDate('updated_at', 'd-m-Y') }}</td>
                                 <td class="d-flex align-items-center justify-content-center">
                                     <i class="fa-solid fa-pen-to-square mr-3"></i>
                                     <i class="fa-solid fa-trash"></i>
